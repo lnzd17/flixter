@@ -9,7 +9,6 @@
     </head>
 
     <body>
-
         <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
             <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -22,11 +21,37 @@
                         <a class="nav-link" href="#">See all courses</a>
                     </li>
                 </ul>
-                <span class="nav-item">
-                    <a class="nav-link disabled" href="#">Sign In</a>
-                </span>
+                  <ul class="list-inline">
+                  <% if user_signed_in? %>
+                      <li class="nav-item">
+                        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+                      </li>
+                    <% else %>
+                      <li class= "nav-item">
+                        <%= link_to 'Sign in', new_user_session_path %>
+                      </li>
+                      <li class="nav-item">
+                        <%= link_to 'Sign up', new_user_registration_path %>
+                      </li>
+                  <% end %>
+                </ul>
             </div>
         </nav>
+
+        <div class="info">
+            <% if notice.present? %>
+                <div class="row">
+                  <p class="notice alert alert-info text-center"><%= notice %></p>
+                </div>
+            <% end %>
+            <% if alert.present? %>
+                <div class="row">
+                  <p class="alert alert alert-danger text-center"> <%= alert %></p>
+                </div>
+            <% end %>
+        </div>
+
+
 
         <%= yield %>
     </body>
