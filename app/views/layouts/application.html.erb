@@ -9,50 +9,60 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <a class="navbar-brand" href="#">Flixter</a>
+        <div id="flex-content-container">
+              <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+                  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <a class="navbar-brand" href="#">Flixter</a>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">See all courses</a>
-                    </li>
-                </ul>
-                  <ul class="list-inline">
-                  <% if user_signed_in? %>
-                      <li class="nav-item">
-                        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-                      </li>
-                    <% else %>
-                      <li class= "nav-item">
-                        <%= link_to 'Sign in', new_user_session_path %>
-                      </li>
-                      <li class="nav-item">
-                        <%= link_to 'Sign up', new_user_registration_path %>
-                      </li>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                      <ul class="navbar-nav mr-auto">
+                          <li class="nav-item">
+                              <a class="nav-link" href="#">See all courses</a>
+                          </li>
+                      </ul>
+                        <ul class="list-inline">
+                        <% if user_signed_in? %>
+                            <li class="nav-item">
+                              <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+                            </li>
+                          <% else %>
+                            <li class= "nav-item">
+                              <%= link_to 'Sign in', new_user_session_path %>
+                            </li>
+                            <li class="nav-item">
+                              <%= link_to 'Sign up', new_user_registration_path %>
+                            </li>
+                        <% end %>
+                      </ul>
+                  </div>
+              </nav>
+
+              <div class="info">
+                  <% if notice.present? %>
+                      <div class="row">
+                        <p class="notice alert alert-info text-center"><%= notice %></p>
+                      </div>
                   <% end %>
-                </ul>
-            </div>
-        </nav>
+                  <% if alert.present? %>
+                      <div class="row">
+                        <p class="alert alert alert-danger text-center"> <%= alert %></p>
+                      </div>
+                  <% end %>
+              </div>
 
-        <div class="info">
-            <% if notice.present? %>
-                <div class="row">
-                  <p class="notice alert alert-info text-center"><%= notice %></p>
-                </div>
-            <% end %>
-            <% if alert.present? %>
-                <div class="row">
-                  <p class="alert alert alert-danger text-center"> <%= alert %></p>
-                </div>
-            <% end %>
+
+              <%= yield %>
+
+        </div>
+        <div id="footer">
+          <div class="container">
+            <b>Footer Here</b>
+            <br />
+            <%= link_to 'Link', '#' %>
+          </div>
         </div>
 
-
-
-        <%= yield %>
     </body>
 </html>
