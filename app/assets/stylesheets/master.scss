@@ -3,7 +3,8 @@
 
 body{
   font-family: 'Open Sans', sans-serif;
-  color:rgb(252,214,251);
+  color:#FFE1EA;
+  background: image_url('bg.png');
 }
 
 h1, h2, h3, h4, h5, h6, .navbar {
@@ -21,7 +22,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
   font-size: 45px;
-  color: rgb(216,40,188);
+  color: #D828BC;
 
 }
 
@@ -30,7 +31,6 @@ h1, h2, h3, h4, h5, h6, .navbar {
   background: image_url('hero.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
-  -o-background-size: cover;
   background-size: cover;
   height: 370px;
   box-shadow: 0px 3px 8px #2a2a2a;
@@ -42,5 +42,22 @@ h1, h2, h3, h4, h5, h6, .navbar {
   color:rgb(252,214,251);
   margin-left: auto;
   margin-right: auto;
-  border:1px solid rgb(252,214,251);
+  border: 5px solid #FFE1EA;
+}
+
+.btn-success{
+  // background-color:#0DAB76;
+  // border-color: #0DAB76;
+  // background-color: #C3E86E;
+  // border-color: #C3E86E;
+  background-color: #8AEA92;
+  border-color: #8AEA92;
+  color: #4B296B;
+}
+
+.feature{
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: #4B296B;
 }
