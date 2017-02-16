@@ -1,0 +1,25 @@
+<br />
+
+<div>
+  <h1 class="text-center purple-text">Learn something today</h1>
+  <hr />
+  </div>
+
+  <div class="row">
+    <div class="col-6 offset-3">
+      <% @courses.each do |course| %>
+          <div class="list-group">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                      <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1"><%= course.title %></h5>
+                            <small><%= course.cost %></small>
+                      </div>
+                      <br/>
+                      <p class="mb-1"><%= course.description %></p>
+                </a>
+          </div>
+      <% end %>
+
+    </div>
+
+  </div>
