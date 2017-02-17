@@ -1,0 +1,13 @@
+<br />
+  <h2 class="purple-text">Add a new section</h2>
+
+<div class="form-style">
+
+  <%= simple_form_for @section, url: instructor_course_sections_path(@course) do |f|%>
+  <%= f.input :title%>
+  <br/>
+    <%= f.submit "Add Section", class: 'btn btn-success' %>
+  <% end%>
+
+
+</div>

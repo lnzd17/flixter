@@ -4,7 +4,7 @@
 body{
   font-family: 'Open Sans', sans-serif;
   color:#FFE1EA;
-  background: image_url('bg.png');
+  // background: image_url('bg.png');
 }
 
 h1, h2, h3, h4, h5, h6, .navbar {
@@ -69,10 +69,7 @@ h1, h2, h3, h4, h5, h6, .navbar {
   left: 15px;
 }
 
-li{
-  display: inline;
-  padding: 5px;
-}
+
 
 .form-style{
   color: #4B296B;
@@ -137,4 +134,8 @@ a{
   margin-right:auto;
   max-width: 500px;
 
+}
+
+ul{
+  padding:0;
 }
