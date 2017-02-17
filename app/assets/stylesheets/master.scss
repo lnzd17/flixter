@@ -95,9 +95,46 @@ h2{
 }
 
 .help-block {
-  color: #ff3333;
+  color: #D828BC;
   padding: 2px 8px 2px 8px;
   font-size: 0.8em;
   background-color: rgba(255,255,255,0.2);
   margin: 10px;
+}
+
+a{
+  color: #8AEA92;
+}
+
+.form-style a{
+  color:#D828BC;
+
+}
+
+.pink-text{
+  color:#D828BC;
+}
+
+.alert-info{
+  background-color:rgba(255,255,255,0.8);
+  border-color: white;
+  color: #4B296B;
+}
+
+.alert-danger{
+  background-color:rgba(216,40, 188,0.5);
+  border-color: #D828BC;
+  color: #4B296B;
+}
+
+.badge-default{
+
+}
+
+.course-info{
+  padding:10px;
+  margin-left:auto;
+  margin-right:auto;
+  max-width: 500px;
+
 }
