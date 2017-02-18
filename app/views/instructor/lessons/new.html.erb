@@ -1,0 +1,14 @@
+<br />
+  <h2 class="purple-text">Add a new lesson</h2>
+
+<div class="form-style">
+
+  <%= simple_form_for @lesson, url: instructor_section_lessons_path(@section) do |f|%>
+  <%= f.input :title%>
+  <%= f.input :subtitle%>
+  <br/>
+    <%= f.submit "Add Lesson", class: 'btn btn-success' %>
+  <% end%>
+
+
+</div>
