@@ -68,3 +68,9 @@ gem 'devise'
 
 #adds carrier wave
 gem 'carrierwave', '~> 1.0'
+
+#adds figaro
+gem "figaro"
+
+#adds fog
+gem "fog"
