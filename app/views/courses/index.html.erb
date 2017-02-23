@@ -15,6 +15,10 @@
                             <span class="badge badge-default"><%= number_to_currency course.cost %></span>
                       </div>
                       <br/>
+                        <div class="photo-container mb-1">
+                          <%= image_tag course.image, class:"img-fluid" %>
+                        </div>
+                        <br/>
                       <p class="mb-1 purple-text"><%= course.description %></p>
               <% end %>
           </div>

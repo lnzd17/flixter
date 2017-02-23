@@ -1,6 +1,9 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
 
+
+/*tag styles*/
+
 body{
   font-family: 'Open Sans', sans-serif;
   color:#FFE1EA;
@@ -11,6 +14,23 @@ h1, h2, h3, h4, h5, h6, .navbar {
   margin: 0;
 }
 
+h2{
+  text-align: center;
+  margin: 5px;
+}
+
+a{
+  color: #8AEA92;
+}
+
+
+ul{
+  padding:0;
+}
+
+
+
+/*Custom Bootstrap*/
 .navbar{
   font-family: 'Open Sans', sans-serif;
   font-weight: 600;
@@ -26,86 +46,11 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 }
 
-
-.hero{
-  background: image_url('hero.jpg') no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  background-size: cover;
-  height: 370px;
-  box-shadow: 0px 3px 8px #2a2a2a;
-}
-
-
-.frosty {
-  background: rgba(0, 0, 0, 0.5);
-  color:rgb(252,214,251);
-  margin-left: auto;
-  margin-right: auto;
-  border: 5px solid #FFE1EA;
-}
-
 .btn-success{
   background-color: #8AEA92;
   border-color: #8AEA92;
   color: #4B296B;
-}
-
-.feature{
-  width: 100%;
-  padding-left: 5%;
-  padding-right: 5%;
-  color: #4B296B;
-}
-
-.info{
-  margin:10px;
-  z-index:2;
-  position: absolute;
-  left: 15px;
-}
-
-
-
-.form-style{
-  color: #4B296B;
-  padding: 10px;
-  margin-left:auto;
-  margin-right: auto;
-  margin-top: 10px;
-  background-color: rgba(0,0,0,0.2);
-  max-width: 400px;
-}
-
-.purple-text{
-  color: #4B296B;
-
-}
-
-h2{
-  text-align: center;
-  margin: 5px;
-}
-
-.help-block {
-  color: #D828BC;
-  padding: 2px 8px 2px 8px;
-  font-size: 0.8em;
-  background-color: rgba(255,255,255,0.2);
-  margin: 10px;
-}
-
-a{
-  color: #8AEA92;
-}
-
-.form-style a{
-  color:#D828BC;
-
-}
-
-.pink-text{
-  color:#D828BC;
+  margin:5px;
 }
 
 .alert-info{
@@ -120,18 +65,123 @@ a{
   color: #4B296B;
 }
 
+/*custom simple_form*/
+
+.help-block {
+  color: #D828BC;
+  padding: 2px 8px 2px 8px;
+  font-size: 0.8em;
+  background-color: rgba(255,255,255,0.2);
+  margin: 10px;
+}
+
+
+/*custom classes*/
+
+/*static page styling*/
+.hero{
+  background: image_url('hero.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 370px;
+  box-shadow: 0px 3px 8px #2a2a2a;
+}
+
+
+.frosty-container {
+  background: rgba(0, 0, 0, 0.5);
+  color:rgb(252,214,251);
+  margin-left: auto;
+  margin-right: auto;
+  border: 5px solid #FFE1EA;
+}
+
+
+
+.summary-container{
+  width: 100%;
+  padding-left: 5%;
+  padding-right: 5%;
+  color: #4B296B;
+}
+
+/*alert styling*/
+
+.alerts{
+  margin:10px;
+  z-index:2;
+  position: absolute;
+  left: 15px;
+}
+
+
+/*course presentation*/
 
 .course-info{
   padding:10px;
   margin-left:auto;
   margin-right:auto;
-  max-width: 500px;
+  max-width: 700px;
 
 }
 
-ul{
-  padding:0;
+.section{
+  padding-left: 10px;
+
 }
+
+.section-title{
+
+
+}
+
+.lesson{
+  padding-left:20px;
+  margin-top:20px;
+
+}
+
+.photo-container{
+  max-width:200px;
+}
+
+
+/*styling for forms*/
+
+.form-style{
+  color: #4B296B;
+  padding: 10px;
+  margin-left:auto;
+  margin-right: auto;
+  margin-top: 10px;
+  background-color: rgba(0,0,0,0.2);
+  max-width: 400px;
+}
+
+.form-style a{
+  color:#D828BC;
+
+}
+
+/*text styling*/
+
+.purple-text{
+  color: #4B296B;
+
+}
+
+.pink-text{
+  color:#D828BC;
+}
+
+/*misc*/
+
+.center-align{
+  margin-left:auto;
+  margin-right:auto;
+}
+
 
 .clr{
   clear:both;
