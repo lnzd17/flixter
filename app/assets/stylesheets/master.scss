@@ -142,9 +142,15 @@ ul{
 
 }
 
-.photo-container{
+.photo-container-large{
+  max-width:400px;
+}
+
+.photo-container-small{
   max-width:200px;
 }
+
+
 
 
 /*styling for forms*/

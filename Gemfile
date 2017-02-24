@@ -74,3 +74,6 @@ gem "figaro"
 
 #adds fog
 gem "fog"
+
+#adds MiniMagick
+gem "mini_magick"
