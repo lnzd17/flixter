@@ -77,3 +77,6 @@ gem "fog"
 
 #adds MiniMagick
 gem "mini_magick"
+
+#adds carrierwave-aws - replaces fog
+gem 'carrierwave-aws'
