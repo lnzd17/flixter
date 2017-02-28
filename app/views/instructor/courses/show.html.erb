@@ -23,11 +23,11 @@
     <br/>
 
     <div class="col col-sm-8">
-      <div class="purple-text">
+      <div>
         <ul class="section">
           <% current_course.sections.each do |section| %>
               <li class="section-title">
-                <%= section.title %>
+                <h3><%= section.title %></h3>
               <%= link_to " +New Lesson", new_instructor_section_lesson_path(section),class:"float-right" %>
                 <div class="clear"></div>
                 <ul class="lesson">
@@ -40,7 +40,6 @@
                   <% end %>
                 </ul>
               </li>
-          <br/>
           <% end %>
         </ul>
       </div>
