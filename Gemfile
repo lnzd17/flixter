@@ -80,3 +80,6 @@ gem "mini_magick"
 
 #adds carrierwave-aws - replaces fog
 gem 'carrierwave-aws'
+
+#adds stripe
+gem 'stripe'
