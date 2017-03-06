@@ -131,15 +131,15 @@ ul{
 }
 
 .course-container{
-  padding:10px;
-  margin:10px;
-  background-color: rgba(0,0,0,0.3);
-
+  padding:15px;
+  margin:15px;
+  background-color: rgba(0,0,0,0.8);
 }
 
 .section{
   color: #D828BC;
-
+  padding:10px;
+  margin:10px;
 
 }
 
@@ -151,12 +151,17 @@ ul{
 .lessons{
   padding:20px;
   margin:10px;
-  border: 1px solid;
-  border-color: #e4e4e4 #bebebd #bebebd #e4e4e4;
   background: image_url('office.png');
   font-weight: 100;
   font-size: 15px;
   height:300px;
+}
+
+.sortable-list-lesson li{
+  background-color: rgba(255,255,255,0.1);
+  padding:10px;
+  margin-top:10px;
+  margin-bottom:10px;
 }
 
 .lesson-title{

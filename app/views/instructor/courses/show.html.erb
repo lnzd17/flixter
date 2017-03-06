@@ -19,16 +19,16 @@
 
   </div>
 
-  <% current_course.sections.each do |section| %>
+
     <div class="course-container">
       <div class="section">
-        <ul>
-          <li class="section-title">
-            <h3><%= section.title %></h3>
-            <br/>
-            <%= link_to " +New Lesson", new_instructor_section_lesson_path(section), class:"purple-text" %>
+        <ul class="sortable-list-section">
+          <% current_course.sections.rank(:row_order).each do |section| %>
+          <li class="section-title" data-update-url="<%=instructor_section_path(section)%>">
             <div class="lessons">
-              <ul class="sortable-list">
+            <h3 class="text-center"><%= section.title %></h3>
+            <%= link_to " +New Lesson", new_instructor_section_lesson_path(section) %>
+              <ul class="sortable-list-lesson">
                 <% section.lessons.rank(:row_order).each do |lesson| %>
                     <li data-update-url="<%=instructor_lesson_path(lesson)%>">
                       <span class="bold"><%= lesson.title %></span>
@@ -39,15 +39,28 @@
               </ul>
             </div>
           </li>
+          <% end %>
         </ul>
       </div>
     </div>
-  <% end %>
+
 
 
 
 <script>
- $('.sortable-list').sortable({
+
+$('.sortable-list-section').sortable({
+  update: function( event, ui) {
+    $.ajax({
+      type: 'PUT',
+      url: ui.item.data('update-url'),
+      dataType: 'json',
+      data: { section: {row_order_position: ui.item.index()}}
+    });
+  }
+});
+
+ $('.sortable-list-lesson').sortable({
    update: function( event, ui) {
      $.ajax({
        type: 'PUT',
@@ -57,5 +70,7 @@
      });
    }
  });
+
+
 
 </script>
