@@ -1,49 +1,61 @@
 <br />
 <div>
   <h1 class="text-center purple-text"><%= current_course.title %></h1>
-  <br/>
-    <div class="photo-container-large center-align">
-      <%= image_tag current_course.image, class: 'img-fluid' %>
-    </div>
 </div>
 
 <br/>
 
-<div class="col-10 offset-2 course-info">
-  <div class="row">
+<div class="course-info">
+  <div class="photo-container-large center-align">
+    <%= image_tag current_course.image, class: 'img-fluid' %>
+  </div>
 
-    <div class="col col-sm-4">
         <div>
           <%= link_to "Prevew as Student", course_path(current_course), class: 'btn btn-success' %>
         </div>
         <div>
           <%= link_to 'Add Section', new_instructor_course_section_path(current_course), class:"btn btn-success" %>
         </div>
-    </div>
-    <br/>
 
-    <div class="col col-sm-8">
-      <div>
-        <ul class="section">
-          <% current_course.sections.each do |section| %>
-              <li class="section-title">
-                <h3><%= section.title %></h3>
-              <%= link_to " +New Lesson", new_instructor_section_lesson_path(section),class:"float-right" %>
-                <div class="clear"></div>
-                <ul class="lesson">
-                  <% section.lessons.rank(:row_order).each do |lesson| %>
-                    <li>
-                      <b><%= lesson.title %></b>
+  </div>
+
+  <% current_course.sections.each do |section| %>
+    <div class="course-container">
+      <div class="section">
+        <ul>
+          <li class="section-title">
+            <h3><%= section.title %></h3>
+            <br/>
+            <%= link_to " +New Lesson", new_instructor_section_lesson_path(section), class:"purple-text" %>
+            <div class="lessons">
+              <ul class="sortable-list">
+                <% section.lessons.rank(:row_order).each do |lesson| %>
+                    <li data-update-url="<%=instructor_lesson_path(lesson)%>">
+                      <span class="bold"><%= lesson.title %></span>
                       -
-                      <%= lesson.subtitle %>
+                      <span> <%= lesson.subtitle %></span>
                     </li>
-                  <% end %>
-                </ul>
-              </li>
-          <% end %>
+                <% end %>
+              </ul>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
+  <% end %>
 
-  </div>
-</div>
+
+
+<script>
+ $('.sortable-list').sortable({
+   update: function( event, ui) {
+     $.ajax({
+       type: 'PUT',
+       url: ui.item.data('update-url'),
+       dataType: 'json',
+       data: { lesson: {row_order_position: ui.item.index()}}
+     });
+   }
+ });
+
+</script>
