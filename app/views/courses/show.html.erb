@@ -1,30 +1,25 @@
 <br/>
-<% if current_user && current_user == @course.user %>
-  <%= link_to 'Admin', instructor_course_path(@course), class: ' btn btn-success' %>
-<% end %>
 
-
-  <h1 class="purple-text"> <%= @course.title %> </h1>
-
-<div class="row">
-  <div class="photo-container-large center-align">
-    <%= image_tag @course.image, class: 'img-fluid' %>
-  </div>
+<div>
+  <% if current_user && current_user == @course.user %>
+    <%= link_to 'Admin', instructor_course_path(@course), class: ' btn btn-success' %>
+  <% end %>
+  <h1 class="text-center purple-text"><%= @course.title %></h1>
+  <hr />
 </div>
 
 
 
-<br/>
-
-<div class="course-info purple-text">
+<div class="course-info purple-text text-center">
+  <%= image_tag @course.image, class: 'img-fluid' %>
     <div class="row">
-      <div class="col-sm-2 col-12">
+      <div class="col-sm-2">
         <span class="badge badge-default"><%= number_to_currency @course.cost %></span>
       </div>
-      <div class="col-sm-7 col-12">
+      <div class="col-sm-8">
         <%= @course.description %>
       </div>
-      <div class="col-sm-3 col-12">
+      <div class="col-sm-2">
         <% if current_user %>
           <% if current_user.enrolled_in?(@course) %>
             <h3 class="badge badge-info">You Are Enrolled!</h3>
@@ -50,16 +45,16 @@
     </div>
   </div>
 
-<div class="row">
-  <div class="col-12">
+<div class="row text-center">
+  <div class="col-sm-12">
     <% @course.sections.rank(:row_order).each do |section| %>
-     <br /><br />
      <div class="course-container">
-       <div class="section">
-         <h2 class="text-center"><%= section.title %></h2>
+       <div class="section purple-text">
+         <h1><%= section.title %></h1>
+         <hr>
          <div class="row">
            <% section.lessons.rank(:row_order).each do |lesson| %>
-             <div class="col-12 col-sm-6">
+             <div class="col-sm-12 col-lg-6">
                 <div class="lessons">
                   <%= link_to lesson_path(lesson) do %>
                       <h5 class="lesson-title"><%= lesson.title %></h5>

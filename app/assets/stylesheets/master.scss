@@ -1,5 +1,7 @@
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import "font-awesome-sprockets";
+@import "font-awesome";
 
 
 /*tag styles*/
@@ -14,15 +16,6 @@ h1, h2, h3, h4, h5, h6, .navbar {
   margin: 0;
 }
 
-h2{
-  text-align: center;
-  margin: 5px;
-}
-
-h1{
-  text-align:center;
-  margin-bottom: 10px;
-}
 
 a{
   color: #8AEA92;
@@ -32,7 +25,15 @@ a{
 ul{
   padding:0;
   list-style-position:inside;
+  list-style-type:none;
 }
+
+img{
+  border: 2px solid #4B296B;
+}
+
+
+
 
 
 
@@ -58,6 +59,12 @@ ul{
   color: #4B296B;
   margin:5px;
 }
+.btn-primary{
+  background-color: #D828BC;
+  border-color: #D828BC;
+  color: #4B296B;
+  margin:5px;
+}
 
 .alert-info{
   background-color:rgba(255,255,255,0.8);
@@ -79,6 +86,11 @@ ul{
   font-size: 0.8em;
   background-color: rgba(255,255,255,0.2);
   margin: 10px;
+}
+
+/*custom font-awesome*/
+.fa-ellipsis-v{
+  margin-right:20px;
 }
 
 
@@ -125,15 +137,17 @@ ul{
 /*course presentation*/
 
 .course-info{
-  padding:10px;
-  margin:10px;
+  padding-top:25px;
+  padding-bottom:25px;
+  margin:15px;
+  line-height: 150px;
 
 }
 
 .course-container{
   padding:15px;
   margin:15px;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.1);
 }
 
 .section{
@@ -154,7 +168,7 @@ ul{
   background: image_url('office.png');
   font-weight: 100;
   font-size: 15px;
-  height:300px;
+  min-height:300px;
 }
 
 .sortable-list-lesson li{
@@ -168,13 +182,18 @@ ul{
   color:#FFE1EA;
 }
 
-.photo-container-large{
-  max-width:400px;
+/*dashboard styling*/
+
+.teaching{
+  margin:15px;
+
 }
 
-.photo-container-small{
-  max-width:200px;
+.enrolled{
+  margin:15px;
+
 }
+
 
 
 
@@ -211,12 +230,12 @@ ul{
   font-weight: bold;
 }
 
+.small-text{
+  font-size:8px;
+}
+
 /*misc*/
 
-.center-align{
-  margin-left:auto;
-  margin-right:auto;
-}
 
 
 .clr{

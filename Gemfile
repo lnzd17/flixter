@@ -88,3 +88,6 @@ gem 'stripe'
 
 #adds ranked-model
 gem 'ranked-model'
+
+#adds font-awesome
+gem 'font-awesome-sass'

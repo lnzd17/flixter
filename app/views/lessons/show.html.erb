@@ -1,7 +1,12 @@
 <br/>
 
-<h1 class="text-center purple-text"> <%= current_lesson.title %> </h1>
-<p class="text-center purple-text"><%= current_lesson.subtitle %> </p>
+<div>
+  <h1 class="text-center purple-text"> <%= current_lesson.title %> </h1>
+  <p class="text-center purple-text"><%= current_lesson.subtitle %> </p>
+  <hr />
+</div>
+
+
 
 <div class="col-10 offset-1">
 <video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto" poster="<%= image_path('black.jpg') %>" data-setup="{}">

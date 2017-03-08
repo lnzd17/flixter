@@ -1,0 +1,68 @@
+<br/>
+
+<div class="enrolled">
+  <div>
+    <h1 class="text-center purple-text">Flixter Dashboard</h1>
+    <hr>
+  </div>
+  <br/>
+
+<div class="enrolled">
+  <div>
+    <h2 class="text-center pink-text">What I'm Learning</h2>
+  </div>
+  <br/>
+
+  <div class="row">
+    <div class="col-6 offset-3">
+      <% current_user.enrolled_courses.each do |course| %>
+          <div class="list-group">
+              <%= link_to course_path(course), class:"list-group-item list-group-item-action flex-column align-items-start" do %>
+                      <div class="d-flex w-100 justify-content-between purple-text">
+                            <h5 class="mb-1"><%= course.title %></h5>
+                            <span class="badge badge-success"> More Info...</span>
+                      </div>
+                      <br/>
+                        <div class="mb-1">
+                          <%= image_tag course.image, class:"img-fluid" %>
+                        </div>
+                        <br/>
+                      <p class="mb-1 purple-text"><%= course.description %></p>
+              <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+<br/>
+</div>
+
+  <hr>
+  <br/>
+
+<div class="teaching">
+  <div>
+    <h2 class="text-center pink-text">What I'm Teaching</h2>
+  </div>
+    <br/>
+
+  <div class="row">
+    <div class="col-6 offset-3">
+      <% current_user.courses.each do |course| %>
+          <div class="list-group">
+              <%= link_to course_path(course), class:"list-group-item list-group-item-action flex-column align-items-start" do %>
+                      <div class="d-flex w-100 justify-content-between purple-text">
+                            <h5 class="mb-1"><%= course.title %></h5>
+                            <span class="badge badge-success"> More Info...</span>
+                      </div>
+                      <br/>
+                        <div class="mb-1">
+                          <%= image_tag course.image, class:"img-fluid" %>
+                        </div>
+                        <br/>
+                      <p class="mb-1 purple-text"><%= course.description %></p>
+              <% end %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+</div>
