@@ -2,7 +2,7 @@
 
 <div>
   <% if current_user && current_user == @course.user %>
-    <%= link_to 'Admin', instructor_course_path(@course), class: ' btn btn-success' %>
+    <%= link_to 'Admin', instructor_course_path(@course), class: 'btn btn-success' %>
   <% end %>
   <h1 class="text-center purple-text"><%= @course.title %></h1>
   <hr />

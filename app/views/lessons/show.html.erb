@@ -1,10 +1,26 @@
 <br/>
 
 <div>
-  <h1 class="text-center purple-text"> <%= current_lesson.title %> </h1>
+  <h3 class="text-center pink-text"><%= link_to current_lesson.section.course.title, course_path(current_lesson.section.course)%>
+    : <%= current_lesson.section.title %></h3>
+    <br/>
+  <h5 class="text-center purple-text"> <%= current_lesson.title %> </h5>
   <p class="text-center purple-text"><%= current_lesson.subtitle %> </p>
   <hr />
 </div>
+
+<% if current_lesson.next_lesson.present? %>
+  <div class="col-10 offset-1 text-right">
+    <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-success' do %>
+      Next Lesson &nbsp;
+      <i class="fa fa-arrow-right" aria-hidden="true"></i>
+    <% end %>
+  </div>
+<% end %>
+
+<br/>
+
+
 
 
 
