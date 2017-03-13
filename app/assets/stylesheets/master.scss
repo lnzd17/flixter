@@ -19,6 +19,12 @@ h1, h2, h3, h4, h5, h6, .navbar {
 
 a{
   color: #8AEA92;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #6ebb74;
+  text-decoration: none;
 }
 
 
@@ -231,6 +237,32 @@ img{
 
 .small-text{
   font-size:8px;
+}
+
+.justify-text{
+  text-align: justify;
+}
+
+
+/* footer */
+
+#flex-content-container {
+  flex: 1;
+}
+
+#footer {
+  position: relative;
+  width: 100%;
+  min-height: 100px;
+  background-color: rgba(36, 32, 33, 0.9);
+  color: white;
+  padding: 10px 0px;
+  margin-top: 30px;
+  font-weight: 100;
+}
+
+.social-button{
+  margin:4px;
 }
 
 /*misc*/

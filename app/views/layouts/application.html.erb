@@ -1,75 +1,103 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Flixter</title>
-        <%= csrf_meta_tags %>
+  <head>
+    <title>Flixter</title>
+     <%= csrf_meta_tags %>
+     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+     <link href="https://vjs.zencdn.net/5.12.6/video-js.css" rel="stylesheet">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
 
-        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-         <link href="https://vjs.zencdn.net/5.12.6/video-js.css" rel="stylesheet">
-    </head>
-
-    <body>
-        <div id="flex-content-container">
-              <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
-                  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                      <span class="navbar-toggler-icon"></span>
-                  </button>
-                  <a class="navbar-brand" href="<%= root_path %>">Flixter</a>
-
-                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                      <ul class="navbar-nav mr-auto">
-                          <li class="nav-item">
-                            <%= link_to 'See All Courses', courses_path %>
-                          </li>
-                      </ul>
-                        <ul class="list-inline">
-                        <% if user_signed_in? %>
-                            <li class="nav-item">
-                              <%= link_to 'Dashboard', dashboard_path %>
-                            </li>
-                            <li class="nav-item">
-                              <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-                            </li>
-                          <% else %>
-                            <li class= "nav-item">
-                              <%= link_to 'Sign in', new_user_session_path %>
-                            </li>
-                            <li class="nav-item">
-                              <%= link_to 'Sign up', new_user_registration_path %>
-                            </li>
-                        <% end %>
-                      </ul>
-                  </div>
-              </nav>
-
-              <div class="alerts">
-                  <% if notice.present? %>
-                      <div class="row">
-                        <p class="notice alert alert-info text-center"><%= notice %></p>
-                      </div>
-                  <% end %>
-                  <% if alert.present? %>
-                      <div class="row">
-                        <p class="alert alert alert-danger text-center"> <%= alert %></p>
-                      </div>
-                  <% end %>
-              </div>
-
-
-              <%= yield %>
-
+  <body>
+    <div id="flex-content-container">
+      <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="<%= root_path %>">Flixter</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+              <%= link_to 'See All Courses', courses_path %>
+            </li>
+          </ul>
+          <ul class="list-inline">
+            <% if user_signed_in? %>
+              <li class="nav-item">
+                <%= link_to 'Dashboard', dashboard_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+              </li>
+            <% else %>
+              <li class= "nav-item">
+                <%= link_to 'Sign in', new_user_session_path %>
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Sign up', new_user_registration_path %>
+              </li>
+            <% end %>
+          </ul>
         </div>
-        <div id="footer">
-          <div class="container">
-              <b>Teachers</b>
-                <br />
-              <%= link_to 'Teach a Course', new_instructor_course_path %>
+      </nav>
+
+      <div class="alerts">
+        <% if notice.present? %>
+          <div class="row">
+            <p class="notice alert alert-info text-center"><%= notice %></p>
+          </div>
+        <% end %>
+        <% if alert.present? %>
+          <div class="row">
+            <p class="alert alert alert-danger text-center"> <%= alert %></p>
+          </div>
+        <% end %>
+      </div>
+     <%= yield %>
+    </div>
+
+
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-sm-3">
+            <b>Teachers</b>
+            <br />
+            <%= link_to 'Teach a Course', new_instructor_course_path %>
+            <br />
+            <%= link_to 'My Dashboard', dashboard_path %>
+          </div>
+          <div class="col-12 col-sm-3">
+            <b>About</b>
+            <br />
+            <%= link_to 'Team', '#' %>
+            <br />
+            <%= link_to 'Careers', '#' %>
+            <br />
+            <%= link_to 'Privacy Policy', '#' %>
+          </div>
+          <div class="col-12 col-sm-3">
+            <b>Contact</b>
+            <br />
+            lindsay.dages@gmail.com
+          </div>
+          <div class="col-12 col-sm-3">
+            <b>Social</b>
+            <br />
+            <%= link_to 'https://github.com/lnzd17' do %>
+              <i class="fa fa-github fa-2x social-button" aria-hidden="true"></i>
+            <% end %>
+            <%= link_to 'https://www.freecodecamp.com/lnzd17' do %>
+              <i class="fa fa-free-code-camp fa-2x social-button" aria-hidden="true"></i>
+            <% end %>
           </div>
         </div>
+      </div>
+    </div>
 
-        <script src="https://vjs.zencdn.net/5.12.6/video.js"></script>
-        <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <script src="https://vjs.zencdn.net/5.12.6/video.js"></script>
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
 
-    </body>
+  </body>
 </html>
