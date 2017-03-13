@@ -13,13 +13,13 @@
 <div class="course-info purple-text text-center">
   <%= image_tag @course.image, class: 'img-fluid' %>
     <div class="row">
-      <div class="col-sm-2">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-2">
         <span class="badge badge-default"><%= number_to_currency @course.cost %></span>
       </div>
-      <div class="col-sm-8">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-8">
         <%= @course.description %>
       </div>
-      <div class="col-sm-2">
+      <div class="col-12 col-sm-12 col-md-12 col-lg-2">
         <% if current_user %>
           <% if current_user.enrolled_in?(@course) %>
             <h3 class="badge badge-info">You Are Enrolled!</h3>
@@ -46,7 +46,7 @@
   </div>
 
 <div class="row text-center">
-  <div class="col-sm-12">
+  <div class=" col-12 col-sm-12">
     <% @course.sections.rank(:row_order).each do |section| %>
      <div class="course-container">
        <div class="section purple-text">
@@ -54,7 +54,7 @@
          <hr>
          <div class="row">
            <% section.lessons.rank(:row_order).each do |lesson| %>
-             <div class="col-sm-12 col-lg-6">
+             <div class=" col-12 col-sm-12 col-lg-6">
                 <div class="lessons">
                   <%= link_to lesson_path(lesson) do %>
                       <h5 class="lesson-title"><%= lesson.title %></h5>

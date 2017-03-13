@@ -10,7 +10,7 @@
 </div>
 
 <% if current_lesson.next_lesson.present? %>
-  <div class="col-10 offset-1 text-right">
+  <div class=" col-12 col-sm-12 col-md-12 col-lg-10 offset-lg-1 text-right">
     <%= link_to lesson_path(current_lesson.next_lesson), class: 'btn btn-success' do %>
       Next Lesson &nbsp;
       <i class="fa fa-arrow-right" aria-hidden="true"></i>
@@ -24,7 +24,7 @@
 
 
 
-<div class="col-10 offset-1">
+<div class="col-12 col-sm-12 col-md-12 col-lg-10 offset-lg-1 ">
 <video id="my-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto" poster="<%= image_path('black.jpg') %>" data-setup="{}">
   <source src="<%= current_lesson.video.to_s %>" type='video/mp4'>
     <noscript>
