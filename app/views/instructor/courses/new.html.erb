@@ -1,20 +1,19 @@
 <br />
-
 <div>
   <h1 class="text-center purple-text">Add a New Course</h1>
   <hr />
 </div>
 
-<div class="form-style">
-
-  <%= simple_form_for @course, url: instructor_courses_path do |f|%>
-  <%= f.input :title%>
-  <%= f.input :description %>
-  <%= f.input :cost%>
-  <%= f.input :image%>
-  <br/>
-    <%= f.submit "Create", class: 'btn btn-success' %>
-  <% end%>
-
+<div class="page-border">
+  <div class="form-style">
+    <%= simple_form_for @course, url: instructor_courses_path do |f|%>
+    <%= f.input :title%>
+    <%= f.input :description %>
+    <%= f.input :cost%>
+    <%= f.input :image%>
+    <br/>
+      <%= f.submit "Create", class: 'btn btn-success' %>
+    <% end%>
+  </div>
 
 </div>

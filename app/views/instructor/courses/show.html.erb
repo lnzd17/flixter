@@ -26,6 +26,7 @@
           <div class="lessons">
             <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
             <h3 class="text-center"><%= section.title %></h3>
+            <br/>
             <button type="button" class="btn btn-primary btn-sm new-lesson-button" data-toggle="modal" data-target="#newLessonModal" data-lesson-url="<%= instructor_section_lessons_path(section) %>">
               New Lesson
             </button>
@@ -35,7 +36,7 @@
                   <i class="fa fa-ellipsis-v" aria-hidden="true"></i>
                   <span class="bold"><%= lesson.title %></span>
                   -
-                  <span> <%= lesson.subtitle %></span>
+                  <span style="color:#FFE1EA;"> <%= lesson.subtitle %></span>
                 </li>
               <% end %>
             </ul>
@@ -57,7 +58,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
-        <h4 class="modal-title" id="newLessonModalLabel">Add New Lesson</h4>
+        <h4 class="modal-title purple-text text-center" id="newLessonModalLabel">Add New Lesson</h4>
       </div>
       <%= simple_form_for @lesson, url: "#", html: {id: 'newLessonForm' } do |f|%>
         <div class="modal-body">
@@ -86,7 +87,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">×</span>
         </button>
-        <h4 class="modal-title" id="newSectionModalLabel">Add a new Section</h4>
+        <h4 class="modal-title purple-text text-center" id="newSectionModalLabel">Add a new Section</h4>
       </div>
       <%= simple_form_for @section, url: instructor_course_sections_path(current_course) do |f|%>
         <div class="modal-body">

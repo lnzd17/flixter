@@ -78,8 +78,8 @@ img{
 }
 
 .alert-info{
-  background-color:rgba(255,255,255,0.8);
-  border-color: white;
+  background-color:rgba(138, 234, 146,0.8);
+  border-color: #8AEA92;
   color: #4B296B;
 }
 
@@ -87,6 +87,14 @@ img{
   background-color:rgba(216,40, 188,0.5);
   border-color: #D828BC;
   color: #4B296B;
+}
+
+/*alert styling*/
+
+.alerts{
+  margin:10px;
+  z-index:2;
+  position: absolute;
 }
 
 /*custom simple_form*/
@@ -135,14 +143,7 @@ img{
   color: #4B296B;
 }
 
-/*alert styling*/
 
-.alerts{
-  margin:10px;
-  z-index:2;
-  position: absolute;
-  left: 40%;
-}
 
 
 /*course presentation*/
@@ -209,12 +210,15 @@ img{
 
 /*styling for forms*/
 
+.page-border{
+  margin:10px;
+
+}
+
 .form-style{
   color: #4B296B;
   padding: 10px;
-  margin-left:auto;
-  margin-right: auto;
-  margin-top: 10px;
+  margin:10px auto;
   background-color: rgba(0,0,0,0.2);
   max-width: 400px;
 }

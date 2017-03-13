@@ -45,12 +45,16 @@
       <div class="alerts">
         <% if notice.present? %>
           <div class="row">
-            <p class="notice alert alert-info text-center"><%= notice %></p>
+            <div class="col-12">
+              <p class="notice alert alert-info text-center"><%= notice %></p>
+            </div>
           </div>
         <% end %>
         <% if alert.present? %>
           <div class="row">
-            <p class="alert alert alert-danger text-center"> <%= alert %></p>
+            <div class="col-12">
+              <p class="alert alert alert-danger text-center"> <%= alert %></p>
+            </div>
           </div>
         <% end %>
       </div>
