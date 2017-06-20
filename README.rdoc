@@ -1,0 +1,27 @@
+== README
+
+This is the third Ruby on Rails application I built while attending FireHose Project's Software Engineering Bootcamp.
+
+=== Features
+* A user can login/sign up
+* A user can view all courses
+* A registered user can create a course (lessons and sections can be rearranged by dragging them to a new position)
+* A registered user can sign up for a course and "pay" via Stripe (transactions are only ran as tests)
+* A registered user can view their dashboard (includes courses they are enrolled in and courses they are teaching)
+
+
+
+
+=== Tools
+* Heroku
+* Simple Form
+* Bootstrap
+* Font Awesome
+* Figaro
+* Carrierwave
+* Fog
+* AWS
+* Stripe
+* Rank Model
+* Devise
+
